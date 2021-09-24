@@ -1,7 +1,11 @@
+import os
+from dotenv import load_dotenv
 from notion.client import NotionClient
 
+load_dotenv()
+
 # Obtain the `token_v2` value by inspecting your browser cookies on a logged-in (non-guest) session on Notion.so
-token = "0c885a798c2d71107add6e3ddb7c0464da1b91ced006c5ec1185bec99bf862953c2400f20d7aa3cc51b85781f78a352a13bdd4ad6d0f02b3080c9bc99ef103e10152c6effd3d91e25270d7b899d2"
+token = os.getenv('TOKEN_V2')
 client = NotionClient(token_v2=token)
 
 # Replace this URL with the URL of the page you want to edit
